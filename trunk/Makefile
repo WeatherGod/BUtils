@@ -99,6 +99,9 @@ $(MYLIB_PATH)/libBUtils.so : lib/libBUtils.so
 
 
 clean :
+	- rm -f BUtils.tar
+	- rm -f BUtils.tar.gz
+	- rm -f BUtils.tar.bz2
 	- rm -f $(BOBJECTS)
 	- rm -f lib/libBUtils.so
 
@@ -117,3 +120,31 @@ remove :
 	- rm -f $(MYINC_PATH)/Histogram.h
 	- rm -f $(MYLIB_PATH)/libBUtils.so
 
+tar : BUtils.tar
+
+tar.gz : BUtils.tar.gz
+
+tar.bz2 : BUtils.tar.bz2
+
+BUtils.tar.gz : BUtils.tar
+	gzip -f BUtils.tar
+
+BUtils.tar.bz2 : BUtils.tar
+	bzip2 -f BUtils.tar
+
+BUtils.tar : include include/VectorUtly.h include/StrUtly.h include/ConfigUtly.h include/FlockUtly.h \
+             include/TimeUtly.h include/FormatUtly.h include/CmdLineUtly.h include/DistUtly.h \
+             include/StatUtly.h include/Histogram.h \
+             src src/VectorUtly.C src/StrUtly.C src/ConfigUtly.C src/FlockUtly.C \
+             src/TimeUtly.C src/FormatUtly.C src/CmdLineUtly.C src/DistUtly.C \
+             src/StatUtly.C src/Histogram.C \
+             lib Makefile
+	-rm -f BUtils.tar
+	tar -cf BUtils.tar --no-recursion \
+                ../BUtils/include/VectorUtly.h ../BUtils/include/StrUtly.h ../BUtils/include/ConfigUtly.h ../BUtils/include/FlockUtly.h \
+                ../BUtils/include/TimeUtly.h ../BUtils/include/FormatUtly.h ../BUtils/include/CmdLineUtly.h ../BUtils/include/DistUtly.h \
+                ../BUtils/include/StatUtly.h ../BUtils/include/Histogram.h \
+                ../BUtils/src/VectorUtly.C ../BUtils/src/StrUtly.C ../BUtils/src/ConfigUtly.C ../BUtils/src/FlockUtly.C \
+                ../BUtils/src/TimeUtly.C ../BUtils/src/FormatUtly.C ../BUtils/src/CmdLineUtly.C ../BUtils/src/DistUtly.C \
+                ../BUtils/src/StatUtly.C ../BUtils/src/Histogram.C \
+                ../BUtils/lib ../BUtils/Makefile
