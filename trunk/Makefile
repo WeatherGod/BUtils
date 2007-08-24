@@ -3,7 +3,7 @@ VERSION = 0.9
 
 # if the system does not support file locking,
 # then define the macro _NO_FILELOCK by uncommenting below
-DEFFLAGS = -D _DOLINKING_ # -D _NO_FILELOCK
+DEFFLAGS = # -D _NO_FILELOCK
 
 
 BOBJECTS = VectorUtly.o StrUtly.o ConfigUtly.o FlockUtly.o TimeUtly.o FormatUtly.o CmdLineUtly.o DistUtly.o StatUtly.o Histogram.o

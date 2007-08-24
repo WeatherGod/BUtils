@@ -55,9 +55,4 @@ string GiveDelimitedList(const vector <string> &, const string &);
 bool OnlyDigits(const string &WordRep);
 bool OnlyAlpha(const string &WordRep);
 
-#ifndef _DOLINKING_
-// for now...
-#include "StrUtly.C"
-#endif
-
 #endif

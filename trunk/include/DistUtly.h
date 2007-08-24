@@ -35,8 +35,4 @@ double ConvertAngleSystemDegrees(double OrigAngle);
 double Bearing(double Lon1, double Lat1, double Lon2, double Lat2);
 void LatLonFrom(double Lat1, double Lon1, double Dist, double Dir, double &Lat2, double &Lon2);
 
-#ifndef _DOLINKING_
-#include "DistUtly.C"
-#endif
-
 #endif

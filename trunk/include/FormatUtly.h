@@ -11,8 +11,4 @@ string Dim(const string &TheLine);
 string Underline(const string &TheLine);
 string Blink(const string &TheLine);
 
-#ifndef _DOLINKING_
-#include "FormatUtly.h"
-#endif
-
 #endif

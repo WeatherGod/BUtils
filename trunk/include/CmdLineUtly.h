@@ -17,8 +17,4 @@ vector <string> ProcessFlatCommandLine(int ArgumentCount, char *ArgLine[]);
 
 //	Ouput:	a vector of strings populated by the strings found in ArgLine, without the first word, which should have been the Program name
 
-#ifndef _DOLINKING_
-#include "CmdLineUtly.h"
-#endif
-
 #endif

@@ -13,9 +13,4 @@ template <class GenType> vector <GenType> Merge(const vector <GenType> &AVect, c
 
 template <class GenType> vector <GenType> MergeUnique(const vector <GenType> &AVect, const vector <GenType> &BVect);
 
-#ifndef _DOLINKING_
-// For now...
-#include "VectorUtly.C"
-#endif
-
 #endif

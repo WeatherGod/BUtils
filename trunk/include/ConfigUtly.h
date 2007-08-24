@@ -14,9 +14,4 @@ string ReadNoComments(ifstream &ReadData);
 string ReadNoComments(fstream &ReadData);
 string StripTags(string TheLine, const string &TheTagWord);
 
-#ifndef _DOLINKING_
-// For now...
-#include "ConfigUtly.C"
-#endif
-
 #endif

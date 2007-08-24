@@ -45,8 +45,4 @@ class Histogram
 		double InterquartileVal(const int &Quartile, const vector <double> &TheValues) const;
 };
 
-#ifndef _DOLINKING_
-#include "Histogram.C"
-#endif
-
 #endif

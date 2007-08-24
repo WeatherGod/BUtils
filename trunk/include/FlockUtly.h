@@ -7,9 +7,4 @@
 int TruncateFile(fstream &FileStream, const off_t NewLength = 0);
 int FileLockControl(fstream &FileStream, const short LockType);
 
-#ifndef _DOLINKING_
-// For now...
-#include "FlockUtly.C"
-#endif
-
 #endif

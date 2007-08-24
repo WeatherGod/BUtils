@@ -38,8 +38,4 @@ long double Variancel(const vector <double> &Values);
 
 double InterquartileVal(const int Quartile, vector <double> TheValues);
 
-#ifndef _DOLINKING_
-#include "StatUtly.h"
-#endif
-
 #endif
