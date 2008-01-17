@@ -302,6 +302,8 @@ vector <string> StrToUpper(vector <string> SomeStrings)
 	{
 		*AString = StrToUpper(*AString);
 	}
+
+	return(SomeStrings);
 }
 
 vector <string> StrToLower(vector <string> SomeStrings)
@@ -312,6 +314,8 @@ vector <string> StrToLower(vector <string> SomeStrings)
         {
                 *AString = StrToLower(*AString);
         }
+
+	return(SomeStrings);
 }
 
 vector <string> FlipString(vector <string> SomeStrings)
@@ -322,6 +326,8 @@ vector <string> FlipString(vector <string> SomeStrings)
         {
                 *AString = FlipString(*AString);
         }
+
+	return(SomeStrings);
 }
 
 
@@ -366,7 +372,7 @@ string LongToStr(const long int &Number)
 	// Allocation is done inside asprintf()
         char* StringPointer;
 
-        if (asprintf(&StringPointer, "%i", Number) != -1)
+        if (asprintf(&StringPointer, "%li", Number) != -1)
         {
 		string TheReturnStr(StringPointer);
                 free(StringPointer);

@@ -6,7 +6,6 @@ using namespace std;
 #include <string>
 #include <cstdio>				// for sprintf()
 #include <ctime>
-#include <cmath>				// for fmod()
 #include <algorithm>
 #include "StrUtly.h"				// for StrToUpper(), StrToInt(), OnlyDigits(), OnlyAlphas()
 
@@ -162,32 +161,12 @@ int TakeMonthStr(const string &MnthStr)
 string GradConvert(string GradDateForm)
 //  converts hhZddmmmyyyy form into yyyy-mm-dd hh form
 {
-	char DateTypForm[14];
-	memset(DateTypForm, '\0', 14);
-	struct tm GradTime;
-	GradDateForm = StrToUpper(GradDateForm);
-	strptime(GradDateForm.c_str(), "%HZ%d%b%Y", &GradTime);
-	strftime(&DateTypForm[0], 14, "%Y-%m-%d %H", &GradTime);
-//	sprintf(DateTypForm, "%s-%02i-%s %s", YearPart.c_str(), MonthInt, DayPart.c_str(), HourPart.c_str());
-
-	return(DateTypForm);
+	return(GiveTime( GetTime(StrToUpper(GradDateForm), "%HZ%d%b%Y"), "%Y-%m-%d %H"));
 }
 
 string DateTime2Grad(const string &DateTimeString)
 {
-	char GradStr[13];
-	memset(GradStr, '\0', 13);
-
-	struct tm DateTime;
-	DateTime.tm_sec = 0;
-	DateTime.tm_min = 0;
-	DateTime.tm_hour = 0;
-	DateTime.tm_mday = 1;
-	DateTime.tm_mon = 0;
-	strptime(DateTimeString.c_str(), "%Y%b%d %H", &DateTime);
-	strftime(&GradStr[0], 13, "%HZ%d%b%Y", &DateTime);
-
-	return(GradStr);
+	return(GiveTime( GetTime(DateTimeString, "%Y%b%d %H"), "%HZ%d%b%Y"));
 }
 
 
@@ -240,7 +219,7 @@ void RoundHour(time_t &TheTime, const int HourIncrement, const int HourOffset)
 time_t GiveRandomDate(const time_t &MinDate, const time_t &MaxDate)
 {
 	const double TimeDifference = difftime(MaxDate, MinDate);
-	time_t RandomTime = ((time_t) ((((double) rand())/((double) RAND_MAX)) * TimeDifference)) + MinDate;
+	return(((time_t) ((((double) rand())/((double) RAND_MAX)) * TimeDifference)) + MinDate);
 }
 
 

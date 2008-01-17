@@ -27,7 +27,7 @@ vector <string> ProcessFlatCommandLine(int ArgumentCount, char *ArgLine[])
 	vector <string> CmdLineStrings(ArgumentCount - 1, "");	
 	// string vector of size one less than the size of ArgLine filled with nothing
 
-	for (int ArgIndex = 0; ArgIndex < CmdLineStrings.size(); ArgIndex++)
+	for (size_t ArgIndex = 0; ArgIndex < CmdLineStrings.size(); ArgIndex++)
 	{
 		CmdLineStrings[ArgIndex] = ArgLine[ArgIndex + 1];
 	}
