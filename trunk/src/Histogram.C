@@ -3,6 +3,11 @@
 
 using namespace std;
 
+/*! \file Histogram.C
+ *  \ingroup StatUtly
+ *
+*/
+
 #include <iostream>
 #include <string>
 

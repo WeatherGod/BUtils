@@ -1,17 +1,21 @@
 #ifndef _STATUTLY_H
 #define _STATUTLY_H
 
-#include <iostream>		// for cerr messages
-#include <vector>
-#include <algorithm>		// for sort()
-#include <cmath>		// for sqrt(), pow(), remainder()
+/*! \defgroup StatUtly Statistic Utility
+ *  \brief Some basic statistic utility functions.
+ *
+ *  \warning These functions are not the best way to do these things!
+ *           I developed these before knowing the existance of other stuff!
+ *
+ *  \warning These functions are NOT NaN-friendly!  For example, Avg() does 
+ *           not skip any NaNs. Only InterquartileVal() is NaN-friendly.
+ *
+ *  @{
+*/
 
-// NOTE: these functions are not the best way to do these things!
-// I developed these before knowing the existance of other stuff!
-
-// Also, these functions are NOT NaN-friendly!  For example, Avg() does not skip any NaNs.
-// Only InterquartileVal is NaN-friendly.
-
+/*! \file StatUtly.h
+ *
+*/
 
 double Sum(const vector <double> &Values);
 int Sum(const vector <int> &Values);
@@ -37,5 +41,7 @@ long double Variancel(const vector <long double> &Values);
 long double Variancel(const vector <double> &Values);
 
 double InterquartileVal(const int Quartile, vector <double> TheValues);
+
+/*! @} */	// end of StatUtly Group
 
 #endif

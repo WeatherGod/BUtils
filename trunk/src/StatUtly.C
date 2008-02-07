@@ -3,16 +3,15 @@
 
 using namespace std;
 
+/*! \file StatUtly.C
+ *  \ingroup StatUtly
+ *
+*/
+
 #include <iostream>		// for cerr messages
 #include <vector>
 #include <algorithm>		// for sort()
 #include <cmath>		// for sqrt(), pow(), remainder()
-
-// NOTE: these functions are not the best way to do these things!
-// I developed these before knowing the existance of other stuff!
-
-// Also, these functions are NOT NaN-friendly!  For example, Avg() does not skip any NaNs.
-// Only InterquartileVal is NaN-friendly.
 
 
 double Sum(const vector <double> &Values)

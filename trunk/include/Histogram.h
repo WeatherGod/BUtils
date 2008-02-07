@@ -1,8 +1,13 @@
 #ifndef _HISTOGRAM_H
 #define _HISTOGRAM_H
 
+/*! \file Histogram.h
+ *  \ingroup StatUtly
+ *
+*/
 
 #include <vector>
+#include <cctype>
 
 
 class Histogram

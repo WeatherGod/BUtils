@@ -3,8 +3,10 @@
 
 using namespace std;
 
-//  these functions are to assist in formatting output to a LINUX terminal screen
-//  see the manpage on console_codes for info
+/*! \file FormatUtly.C
+ *  \ingroup FormatUtly
+ *
+*/
 
 #include <string>
 #include "FormatUtly.h"

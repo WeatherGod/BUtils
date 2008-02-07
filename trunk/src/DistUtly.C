@@ -3,8 +3,8 @@
 
 using namespace std;
 
-/*	DistUtly.C
-	These functions are related to various distance calculations that are needed
+/*! \file DistUtly.C
+ *  \ingroup DistUtly
 */
 
 #include <cmath>	// for sqrt(), pow(), acos(), cos(), sin(), M_PI

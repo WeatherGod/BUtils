@@ -2,6 +2,11 @@
 #define _TIMEUTLY_C
 using namespace std;
 
+/*! \file TimeUtly.C
+ *  \ingroup TimeUtly
+ *
+*/
+
 #include <vector>
 #include <string>
 #include <cstdio>				// for sprintf()

@@ -2,34 +2,59 @@
 #define _CONFIGUTLY_C
 using namespace std;
 
+/*! \file ConfigUtly.C
+ *  \ingroup ConfigUtly
+ *
+*/
+
 #include <fstream>
 #include <string>
 
 #include "ConfigUtly.h"
 #include "StrUtly.h"		// for StripWhiteSpace()
 
-
+/*! \brief Determines if the starting tag for the specified element
+ *          in in the given string.
+ *
+ *  Starting tags have the following form: "<Tag>".
+ *
+ *  \param LineRead	String to check for the opening tag.
+ *  \param TagWord	The tag name to find.
+ *  \return		True if the starting tag is found in LineRead.
+*/
 bool FoundStartTag(const string &LineRead, const string &TagWord)
 {
 	return(LineRead.find('<' + TagWord + '>') != string::npos);
 }
 
-
+/*! \brief Determines if the ending tag for the specified element
+ *          in in the given string.
+ *
+ *  Ending tags have the following form: "</Tag>".
+ *
+ *  \param LineRead     String to check for the ending tag.
+ *  \param TagWord      The tag name to find.
+ *  \return             True if the ending tag is found in LineRead.
+*/
 bool FoundEndTag(const string &LineRead, const string &TagWord)
 {
 	return(LineRead.find("</"+TagWord+'>') != string::npos);
 }
 
-
+/*! \brief Advances the input file stream, searching for a line with content.
+ *
+ *  A line with content is a line that, when stripped of whitespace,
+ *  contains more than just commented information.
+ *  Comments are recognized as unescapable '#', and goes to the end of the line.
+ *
+ *  The last read of the input file stream will ALWAYS be the getline() that
+ *  read the line being returned.  No more, no less.
+ *
+ *  \param ReadData     Input file stream.
+ *  \return             A white-space stripped line of content without the comment,
+ *                      or empty string if none found.
+*/
 string ReadNoComments(ifstream &ReadData)
-//  assumes '#' is the only kind of To-End-Of-Line comment marker
-//  no escape sequence will be recognized, as of now.  That may change.
-//  if there is nothing but white-space before the comment marker in the line, it will continue reading the file.
-
-//  If the read reaches the end of the file without finding any noncomment info, then it will return an empty string.
-//  Returns a white-space stripped line of noncommented information.
-//  The last read of the file in this function will ALWAYS be the getline() that read the line being returned, 
-//				no more, no less....
 {
         string LineRead = "";
 	bool HaveNonCommentInfo = false;
@@ -60,15 +85,20 @@ string ReadNoComments(ifstream &ReadData)
         return(LineRead);
 }
 
+/*! \brief Advances the input stream, searching for a line with content.
+ *
+ *  A line with content is a line that, when stripped of whitespace,
+ *  contains more than just commented information.
+ *  Comments are recognized as unescapable '#', and goes to the end of the line.
+ *
+ *  The last read of the input stream will ALWAYS be the getline() that
+ *  read the line being returned.  No more, no less.
+ *
+ *  \param ReadData     Input stream.
+ *  \return             A white-space stripped line of content without the comment,
+ *                      or empty string if none found.
+*/
 string ReadNoComments(fstream &ReadData)
-//  assumes '#' is the only kind of To-End-Of-Line comment marker
-//  no escape sequence will be recognized, as of now.  That may change.
-//  if there is nothing but white-space before the comment marker in the line, it will continue reading the file.
-
-//  If the read reaches the end of the file without finding any noncomment info, then it will return an empty string.
-//  Returns a white-space stripped line of noncommented information.
-//  The last read of the file in this function will ALWAYS be the getline() that read the line being returned,
-//                              no more, no less....
 {
         string LineRead = "";
         bool HaveNonCommentInfo = false;
@@ -100,14 +130,18 @@ string ReadNoComments(fstream &ReadData)
 }
 
 
-
+/*! \brief Returns the content contained within the opening and closing tags.
+ *
+ *  \warning This function does not test to see if the tags correspond to
+ *           each other.  So NO COMPLEX NESTING of the same tags!
+ *           If you aren't sure if it will work, TEST IT!!!
+ *
+ *  \param TheLine      String to find the content between the tags.
+ *  \param TheTagWord	The element name to search for.
+ *  \return             The content between the tags,
+ *                      or empty string if opening and closing tags are not found.
+*/
 string StripTags(string TheLine, const string &TheTagWord)
-// returns the substring of whatever is between the opening and corresponding closing tag
-// contained in the string, which is typically a line, but doesn't have to be.
-// This function does not test to make sure the tags correspond to each other, so NO COMPLEX NESTING
-//     the same tags within each other!
-//     so avoid using this function on config files that have tricky lines to parse!
-//     If you aren't sure if it will work, TEST IT!!!!!
 {
         if (FoundStartTag(TheLine, TheTagWord) && FoundEndTag(TheLine, TheTagWord))
         {

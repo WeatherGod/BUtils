@@ -2,12 +2,17 @@
 #define _FLOCK_UTLY_C
 using namespace std;
 
+/*! \file FlockUtly.C
+ *  \ingroup FlockUtly
+ *
+*/
+
 #include <fstream>
 
 #include <ext/stdio_filebuf.h>          // for the fd() member function of the stdio_filebuf class (it gives the file descriptor number)
 #include <unistd.h>                     // for fcntl()
 #include <fcntl.h>                      // for fcntl()
-#include <cstddef>			// for off_t
+#include <cctype>			// for off_t
 #include <sys/types.h>                  // for ftruncate()
 
 #include "FlockUtly.h"

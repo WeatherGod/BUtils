@@ -1,6 +1,17 @@
 #ifndef _TIMEUTLY_H
 #define _TIMEUTLY_H
 
+/*! \defgroup TimeUtly Time Utility
+ *  \brief A variety of time functions that are based on
+ *         the (mostly) standard time_t functions.
+ *
+ *  @{
+*/
+
+/*! \file TimeUtly.h
+ *
+*/
+
 #include <vector>
 #include <string>
 #include <ctime>
@@ -38,5 +49,7 @@ time_t GetTimeUTC(const string &DateTimeStr, const string &FormatString = "%Y-%m
 
 string GiveTime(const time_t &TheDateTime, const string &FormatString = "%Y-%m-%d %H:%M:%S");
 string GiveTimeUTC(const time_t &TheDateTime, const string &FormatString = "%Y-%m-%d %H:%M:%S");
+
+/*! @} */	// end of TimeUtly group
 
 #endif

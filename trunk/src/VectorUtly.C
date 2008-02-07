@@ -2,6 +2,11 @@
 #define _VECTORUTLY_C
 using namespace std;
 
+/*! \file VectorUtly.C
+ *  \ingroup VectorUtly
+ *
+*/
+
 #include <vector>
 #include <algorithm>		// for unique(), sort(),....
 

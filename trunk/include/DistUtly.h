@@ -1,9 +1,14 @@
 #ifndef _DISTUTLY_H
 #define _DISTUTLY_H
+/*! \defgroup DistUtly Distance and Map Utility
+ *  \brief Provides a number of useful distance functions
+ *  and other useful map handling functions and constants.
+ *
+ *  @{
+*/
 
-
-/*	DistUtly.h
-	These functions are related to various distance calculations that are needed
+/*!	\file DistUtly.h
+ *
 */
 #include <cmath>
 
@@ -34,5 +39,7 @@ double ConvertAngleSystemDegrees(double OrigAngle);
 
 double Bearing(double Lon1, double Lat1, double Lon2, double Lat2);
 void LatLonFrom(double Lat1, double Lon1, double Dist, double Dir, double &Lat2, double &Lon2);
+
+/*! @} */	// end DistUtly group
 
 #endif

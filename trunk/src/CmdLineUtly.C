@@ -3,6 +3,11 @@
 
 using namespace std;
 
+/*! \file CmdLineUtly.C
+ *  \ingroup CmdLineUtly
+ *
+*/
+
 #include <vector>
 #include <string>
 

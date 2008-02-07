@@ -82,7 +82,8 @@ WARN_LOGFILE           =
 #---------------------------------------------------------------------------
 # configuration options related to the input files
 #---------------------------------------------------------------------------
-INPUT                  = /home/bvr/BUtils
+INPUT                  = /home/bvr/BUtils/include/ \
+                         /home/bvr/BUtils/src/
 FILE_PATTERNS          = *.c \
                          *.cc \
                          *.cxx \
@@ -127,7 +128,7 @@ FILE_PATTERNS          = *.c \
 RECURSIVE              = YES
 EXCLUDE                = 
 EXCLUDE_SYMLINKS       = NO
-EXCLUDE_PATTERNS       = 
+EXCLUDE_PATTERNS       = */.svn/*
 EXAMPLE_PATH           = 
 EXAMPLE_PATTERNS       = *
 EXAMPLE_RECURSIVE      = NO
