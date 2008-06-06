@@ -12,7 +12,7 @@ using namespace std;
 #include <ext/stdio_filebuf.h>          // for the fd() member function of the stdio_filebuf class (it gives the file descriptor number)
 #include <unistd.h>                     // for fcntl()
 #include <fcntl.h>                      // for fcntl()
-#include <cctype>			// for off_t
+#include <cstddef>			// for off_t
 #include <sys/types.h>                  // for ftruncate()
 
 #include "FlockUtly.h"

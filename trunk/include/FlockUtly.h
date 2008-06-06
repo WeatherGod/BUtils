@@ -2,7 +2,7 @@
 #define _FLOCK_UTLY_H
 
 #include <fstream>
-#include <cctype>	// for off_t
+#include <cstddef>	// for off_t
 
 /*! \defgrooup FlockUtly File Locking Utility
  *  \brief Provides a file-locking mechanism.
