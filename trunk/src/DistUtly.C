@@ -61,6 +61,11 @@ double AngleMod(const double &Numerator, const double &Denominator)
 
 double ConvertAngleSystemRadians(double OrigAngle)
 // flips the system between map (meteo) angles and math angles, assuming angles in radians
+// IMPORTANT!!!
+//     The Meteo angles referred to here is with respect to the way Wind direction
+//     is reported.  So, this will take a Wind *From* azimuth and return a Wind *To*
+//     heading, and vice versa.
+
 {
 	OrigAngle = (-1*OrigAngle) + (M_PI*2.5);
 
@@ -70,6 +75,10 @@ double ConvertAngleSystemRadians(double OrigAngle)
 
 double ConvertAngleSystemDegrees(double OrigAngle)
 // flips the system between map (meteo) angles and math angles, assuming angles in degrees
+// IMPORTANT!!!
+//     The Meteo angles referred to here is with respect to the way Wind direction
+//     is reported.  So, this will take a Wind *From* azimuth and return a Wind *To*
+//     heading, and vice versa.
 {
 	OrigAngle = (-1*OrigAngle) + 450.0;
 
